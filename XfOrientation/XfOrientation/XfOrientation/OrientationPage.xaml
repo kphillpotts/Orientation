@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="XfOrientation.OrientationPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
+    <ScrollView>
+        <StackLayout x:Name="MainStack"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <Label x:Name="MainText"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Button Clicked="Button_OnClicked" Text="Extended Page Layout" />
+            <Button Clicked="FlowLayout_OnClicked" Text="Flow Layout" />
+            <Button Clicked="ComplimenatryLayout_OnClicked" Text="Complimentary Page Layout" />
+        </StackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>

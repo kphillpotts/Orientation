@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="XfOrientation.FlowLayoutPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding MovieQuote.Movie}"
+             BackgroundColor="#3fa1ff">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               FontAttributes="Italic"
+               FontSize="48"
+               Text="{Binding MovieQuote.Quote}"
+               TextColor="White"
+               XAlign="Center"
+               YAlign="Center" />
+
+        <Label Grid.Row="1"
+               FontSize="Small"
+               Text="{Binding MovieQuote.Character}"
+               TextColor="White"
+               XAlign="End" />
+
+    </Grid>
+</ContentPage>
