@@ -52,7 +52,7 @@ namespace XfOrientation
         ImdbRating = "8.2",
         Synopsis = "'The Dude' Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
         Backdrop = "https://fanart.tv/fanart/movies/957/moviebackground/spaceballs-504eabaea6a46.jpg",
-        Poster= "XFOrientation.Images.BigLebowski_poster.jpg",
+        Poster= "BigLebowski_poster.jpg",
         Actor = "Jeff Bridges"
       });
 

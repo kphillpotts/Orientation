@@ -1,72 +1,108 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentView x:Class="XfOrientation.LandscapeContent"
-             xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:extensions="clr-namespace:XfOrientation.Extensions;assembly=XfOrientation"
-             xmlns:local="clr-namespace:XfOrientation;assembly=XfOrientation">
+﻿<?xml version="1.0" encoding="utf-8"?>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+<ContentView
+  x:Class          = "XfOrientation.LandscapeContent"
+  xmlns           = "http://xamarin.com/schemas/2014/forms"
+  xmlns:x          = "http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:extensions = "clr-namespace:XfOrientation.Extensions;assembly=XfOrientation"
+  xmlns:local      = "clr-namespace:XfOrientation;assembly=XfOrientation">
 
-        <Image Grid.Row="0"
-               Grid.Column="0"
-               Aspect="AspectFill"
-               Source="{Binding MovieQuote.Poster}" />
+  <Grid>
 
+    <Grid.ColumnDefinitions>
 
-        <Grid x:Name="RightContent"
-              Grid.Row="0"
-              Grid.Column="1"
-              BackgroundColor="White"
-              MinimumWidthRequest="300"
-              Padding="20">
+      <ColumnDefinition
+        Width = "Auto" />
 
+      <ColumnDefinition
+        Width = "*" />
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="AUTO" />
-                    <RowDefinition Height="AUTO" />
-                    <RowDefinition Height="AUTO" />
-                    <RowDefinition Height="AUTO" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+    </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0"
-                       FontSize="Large"
-                       Text="{Binding MovieQuote.Movie}"
-                       TextColor="Black"
-                       XAlign="Start" />
-                <BoxView Grid.Row="1"
-                         HeightRequest="1"
-                         Color="Gray" />
+    <Image
+      Grid.Row    = "0"
+      Grid.Column = "0"
+      Aspect      = "AspectFill"
+      Source      = "{Binding MovieQuote.Poster, Converter={StaticResource imageResourceCvt}}" />
 
-                <Label Grid.Row="2"
-                       FontSize="Small"
-                       Text="{Binding MovieQuote.RatingDisplay}"
-                       TextColor="#666666"
-                       XAlign="Start" />
-                <Label Grid.Row="2"
-                       FontSize="Small"
-                       Text="{Binding MovieQuote.Genre}"
-                       TextColor="#666666"
-                       XAlign="End" />
-                <BoxView Grid.Row="3"
-                         HeightRequest="1"
-                         Color="Gray" />
+    <Grid
+      x:Name              = "RightContent"
+      Grid.Row            = "0"
+      Grid.Column         = "1"
+      BackgroundColor     = "White"
+      MinimumWidthRequest = "300"
+      Padding             = "20">
 
-                <ScrollView Grid.Row="4"
-                            HorizontalOptions="FillAndExpand"
-                            Orientation="Vertical"
-                            VerticalOptions="FillAndExpand"
-                            WidthRequest="100">
-                    <Label FontSize="Small" Text="{Binding MovieQuote.Synopsis}" />
-                </ScrollView>
+      <Grid>
 
+        <Grid.RowDefinitions>
 
-            </Grid>
-        </Grid>
+          <RowDefinition
+            Height = "AUTO" />
+
+          <RowDefinition
+            Height = "AUTO" />
+
+          <RowDefinition
+            Height = "AUTO" />
+
+          <RowDefinition
+            Height = "AUTO" />
+
+          <RowDefinition
+            Height = "*" />
+
+        </Grid.RowDefinitions>
+
+        <Label
+          Grid.Row  = "0"
+          FontSize  = "Large"
+          Text      = "{Binding MovieQuote.Movie}"
+          TextColor = "Black"
+          XAlign    = "Start" />
+
+        <BoxView
+          Grid.Row      = "1"
+          HeightRequest = "1"
+          Color         = "Gray" />
+
+        <Label
+          Grid.Row  = "2"
+          FontSize  = "Small"
+          Text      = "{Binding MovieQuote.RatingDisplay}"
+          TextColor = "#666666"
+          XAlign    = "Start" />
+
+        <Label
+          Grid.Row  = "2"
+          FontSize  = "Small"
+          Text      = "{Binding MovieQuote.Genre}"
+          TextColor = "#666666"
+          XAlign    = "End" />
+
+        <BoxView
+          Grid.Row      = "3"
+          HeightRequest = "1"
+          Color         = "Gray" />
+
+        <ScrollView
+          Grid.Row          = "4"
+          HorizontalOptions = "FillAndExpand"
+          Orientation       = "Vertical"
+          VerticalOptions   = "FillAndExpand"
+          WidthRequest      = "100">
+
+          <Label
+            FontSize  = "Small"
+            TextColor = "#666666"
+            Text      = "{Binding MovieQuote.Synopsis}" />
+
+        </ScrollView>
+
+      </Grid>
+
     </Grid>
+
+  </Grid>
+
 </ContentView>
