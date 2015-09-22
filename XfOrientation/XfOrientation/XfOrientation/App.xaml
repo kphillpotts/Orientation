@@ -16,7 +16,7 @@
 
       <Style x:Key="quoteText" TargetType="Label">
         <Setter Property="FontAttributes" Value="Italic"/>
-        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="FontSize" Value="42"/>
         <Setter Property="TextColor" Value="{StaticResource quoteColor}"/>
         <Setter Property="XAlign" Value="Center"/>
         <Setter Property="YAlign" Value="Center"/>

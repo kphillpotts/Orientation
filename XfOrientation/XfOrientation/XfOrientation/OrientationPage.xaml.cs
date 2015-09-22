@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DeviceOrientation.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
+using XfOrientation.Views;
 
 namespace XfOrientation
 {
-  public partial class OrientationPage : ContentPage
+  public partial class OrientationPage : BaseContentPage
   {
     public OrientationPage()
     {
@@ -20,15 +21,21 @@ namespace XfOrientation
 
     }
 
-    protected override void OnSizeAllocated(double width, double height)
+    protected override void OnOrientationChanged(OrientationValue newOrientation)
     {
-      base.OnSizeAllocated(width, height);
-
-      if (width > height)
-        Debug.WriteLine("Landscape");
-      else
-        Debug.WriteLine("Portrait");
+      MainText.Text = newOrientation.ToString();
     }
+
+
+    //protected override void OnSizeAllocated(double width, double height)
+    //{
+    //  base.OnSizeAllocated(width, height);
+
+    //  if (width > height)
+    //    Debug.WriteLine("Landscape");
+    //  else
+    //    Debug.WriteLine("Portrait");
+    //}
 
     private enum DeviceOrienation
     {
@@ -60,19 +67,20 @@ namespace XfOrientation
 
     private void HandleOrientationChange(DeviceOrientationChangeMessage message)
     {
-      MainText.Text = message.Orientation.ToString();
+      //MainText.Text = message.Orientation.ToString();
 
-      if (message.Orientation == DeviceOrientations.Landscape)
-        MainStack.Orientation = StackOrientation.Horizontal;
-      else
-      {
-        MainStack.Orientation = StackOrientation.Vertical;
-      }
+      //if (message.Orientation == DeviceOrientations.Landscape)
+      //  MainStack.Orientation = StackOrientation.Horizontal;
+      //else
+      //{
+      //  MainStack.Orientation = StackOrientation.Vertical;
+      //}
     }
 
     private void Button_OnClicked(object sender, EventArgs e)
     {
       CarouselPage carousel = new CarouselPage();
+      carousel.Title = "Movie Quotes";
       foreach (var movieQuote in MovieQuoteGenerater.MovieQuotes)
       {
         carousel.Children.Add(new ExtendedLayoutPage(movieQuote));
@@ -84,6 +92,7 @@ namespace XfOrientation
     private void ComplimenatryLayout_OnClicked(object sender, EventArgs e)
     {
       CarouselPage carousel = new CarouselPage();
+      carousel.Title = "Movie Quotes";
       foreach (var movieQuote in MovieQuoteGenerater.MovieQuotes)
       {
         carousel.Children.Add(new Views.ComplimentaryLayoutPage(movieQuote));
@@ -94,10 +103,17 @@ namespace XfOrientation
 
     private void FlowLayout_OnClicked(object sender, EventArgs e)
     {
+      CarouselPage carousel = new CarouselPage();
+      carousel.Title = "Movie Quotes";
+      foreach (var movieQuote in MovieQuoteGenerater.MovieQuotes)
+      {
+        carousel.Children.Add(new FlowLayoutPage(movieQuote));
+      }
 
-      Navigation.PushAsync(new FlowLayoutPage(MovieQuoteGenerater.GetRandomQuote()));
+      Navigation.PushAsync(carousel);
+
     }
 
-  
-}
+
+  }
 }

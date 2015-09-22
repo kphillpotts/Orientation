@@ -1,66 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage
-  x:Class         = "XfOrientation.ExtendedLayoutPage"
-  xmlns          = "http://xamarin.com/schemas/2014/forms"
-  xmlns:x         = "http://schemas.microsoft.com/winfx/2009/xaml"
-  BackgroundColor = "{StaticResource backgroundColor}">
+<views:BaseContentPage x:Class="XfOrientation.ExtendedLayoutPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:XfOrientation.Views;assembly=XfOrientation"
+             BackgroundColor="{StaticResource backgroundColor}">
 
-  <Grid
-    ColumnSpacing = "0">
+    <Grid ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-    <Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="AUTO" />
+        </Grid.ColumnDefinitions>
 
-      <RowDefinition
-        Height = "*" />
+      <Image x:Name="RightContent"
+       Grid.Row="0"
+       Grid.Column="1"
+       Aspect="AspectFill"
+       Source="{Binding MovieQuote.Poster,
+                                Converter={StaticResource imageResourceCvt}}" />
 
-    </Grid.RowDefinitions>
+      <Grid Grid.Row="0"
+              Grid.Column="0"
+              Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-    <Grid.ColumnDefinitions>
+            <Label Grid.Row="0"
+                   Style="{StaticResource quoteText}"
+                   Text="{Binding MovieQuote.Quote}" />
 
-      <ColumnDefinition
-        Width = "*" />
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Style="{StaticResource attributionText}"
+                   Text="{Binding MovieQuote.Character}" />
 
-      <ColumnDefinition
-        Width = "AUTO" />
+        </Grid>
 
-    </Grid.ColumnDefinitions>
-
-    <Grid
-      Grid.Row    = "0"
-      Grid.Column = "0"
-      Padding     = "20">
-
-      <Grid.RowDefinitions>
-
-        <RowDefinition
-          Height = "*" />
-
-        <RowDefinition
-          Height = "Auto" />
-
-      </Grid.RowDefinitions>
-
-      <Label
-        Grid.Row = "0"
-        Style    = "{StaticResource quoteText}"
-        Text     = "{Binding MovieQuote.Quote}" />
-
-      <Label
-        Grid.Row    = "1"
-        Grid.Column = "0"
-        Style       = "{StaticResource attributionText}"
-        Text        = "{Binding MovieQuote.Character}" />
 
     </Grid>
 
-    <Image
-      x:Name      = "RightContent"
-      Grid.Row    = "0"
-      Grid.Column = "1"
-      Aspect      = "AspectFill"
-      Source      = "{Binding MovieQuote.Poster, Converter={StaticResource imageResourceCvt}}" />
-
-  </Grid>
-
-</ContentPage>
+</views:BaseContentPage>

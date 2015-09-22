@@ -16,7 +16,6 @@ namespace XfOrientation
     public string ImdbRating { get; set; }
     public string Actor { get; set; }
     public string Genre { get; set; }
-    public string Backdrop { get; set; }
     public string Poster { get; set; }
     public string Synopsis { get; set; }
     public string DisplayTitle
@@ -51,7 +50,6 @@ namespace XfOrientation
         Genre = "Comedy, Crime",
         ImdbRating = "8.2",
         Synopsis = "'The Dude' Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
-        Backdrop = "https://fanart.tv/fanart/movies/957/moviebackground/spaceballs-504eabaea6a46.jpg",
         Poster= "BigLebowski_poster.jpg",
         Actor = "Jeff Bridges"
       });
@@ -65,8 +63,7 @@ namespace XfOrientation
         Genre = "Comedy, War",
         ImdbRating = "8.5",
         Synopsis = "An insane general triggers a path to nuclear holocaust that a war room full of politicians and generals frantically try to stop.",
-        Backdrop = "https://fanart.tv/detailpreview/fanart/movies/935/moviebackground/dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-th-555521fa5b1f1.jpg",
-        Poster= "https://fanart.tv/fanart/movies/935/movieposter/dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-th-53de7473e1cc7.jpg",
+        Poster= "DrStrangelove_poster.jpg",
         Actor = ""
       });
 
@@ -80,8 +77,7 @@ namespace XfOrientation
         Genre = "Comedy",
         ImdbRating = "8.0",
         Synopsis = "Spinal Tap, one of England's loudest bands, is chronicled by film director Marty DeBergi on what proves to be a fateful tour.",
-        Backdrop = "https://fanart.tv/fanart/movies/11031/moviethumb/this-is-spinal-tap-5503affcc7044.jpg",
-        Poster = "https://fanart.tv/fanart/movies/11031/movieposter/this-is-spinal-tap-554140d34d81b.jpg",
+        Poster = "SpinalTap_poster.jpg",
         Actor = ""
       });
 
@@ -94,8 +90,7 @@ namespace XfOrientation
         Genre = "Comedy, SciFi",
         ImdbRating = "7.1",
         Synopsis = "Planet Spaceball's President Skroob sends Lord Dark Helmet to steal Planet Druidia's abundant supply of air to replenish their own, and only Lone Starr can stop them.",
-        Backdrop = "https://fanart.tv/fanart/movies/957/moviebackground/spaceballs-504eabaea6a46.jpg",
-        Poster= "https://fanart.tv/fanart/movies/957/movieposter/spaceballs-55429ee8df996.jpg",
+        Poster= "Spaceballs_poster.jpg",
         Actor = "John Candy"
       });
 

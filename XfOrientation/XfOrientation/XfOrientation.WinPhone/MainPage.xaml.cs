@@ -5,7 +5,6 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using DeviceOrientation.Forms.Plugin.WindowsPhone;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
@@ -19,7 +18,6 @@ namespace XfOrientation.WinPhone
       SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
       global::Xamarin.Forms.Forms.Init();
-      DeviceOrientationImplementation.Init();
 
       LoadApplication(new XfOrientation.App());
     }
