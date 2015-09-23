@@ -42,9 +42,11 @@
     <Compile Include="Views\ExtendedLayoutPage.xaml.cs">
       <DependentUpon>ExtendedLayoutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\ImageResourceExtension.cs" />
     <Compile Include="Views\FlowLayoutPage.xaml.cs">
       <DependentUpon>FlowLayoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TabletLandscapeContent.xaml.cs">
+      <DependentUpon>TabletLandscapeContent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LandscapeContent.xaml.cs">
       <DependentUpon>LandscapeContent.xaml</DependentUpon>
@@ -63,9 +65,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="OrientationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -75,9 +74,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DeviceOrientation.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\Xam.Plugins.Forms.DeviceOrientation.1.0.1\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\DeviceOrientation.Forms.Plugin.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.5.0.6446\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -127,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\DrStrangelove_poster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TabletLandscapeContent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.5.0.6446\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.5.0.6446\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

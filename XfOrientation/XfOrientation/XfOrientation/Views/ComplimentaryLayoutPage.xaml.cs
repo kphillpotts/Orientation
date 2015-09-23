@@ -1,55 +1,47 @@
-﻿using DeviceOrientation.Forms.Plugin.Abstractions;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XfOrientation.Views
 {
   public partial class ComplimentaryLayoutPage : BaseContentPage
   {
     private readonly MovieQuote _movieQuote;
-    private readonly LandscapeContent _landscape;
-    private readonly PortraitContent _portrait;
+    private LandscapeContent _landscape;
+    private TabletLandscapeContent _tabletLandscape;
+    private PortraitContent _portrait;
 
     public ComplimentaryLayoutPage(MovieQuote movieQuote)
     {
       InitializeComponent();
       _movieQuote = movieQuote;
-
-      //var svc = DependencyService.Get<IDeviceOrientation>();
-      //var orientation = svc.GetOrientation();
-
-      _portrait = new PortraitContent(_movieQuote);
-      _landscape = new LandscapeContent(_movieQuote);
-
-      //HandleOrientationChange(orientation);
     }
-
-    public ContentView I { get; private set; }
-
-    //protected override void OnAppearing()
-    //{
-    //  base.OnAppearing();
-    //  MessagingCenter.Subscribe<DeviceOrientationChangeMessage>(this, DeviceOrientationChangeMessage.MessageId,
-    //    message => { HandleOrientationChange(message.Orientation); });
-    //}
-
-    //protected override void OnDisappearing()
-    //{
-    //  MessagingCenter.Unsubscribe<DeviceOrientationChangeMessage>(this, DeviceOrientationChangeMessage.MessageId);
-    //  base.OnDisappearing();
-    //}
 
     protected override void OnOrientationChanged(OrientationValue newOrientation)
     {
-      Content = newOrientation == OrientationValue.Portrait ? (View) _portrait : _landscape;
+      Content = newOrientation == OrientationValue.Portrait ? GetPortraitView() : GetLandscapeView();
     }
 
+    private View GetPortraitView()
+    {
+      if (_portrait == null) 
+        _portrait = new PortraitContent(_movieQuote);
+      return _portrait;
+    }
 
-    //private void HandleOrientationChange(DeviceOrientations orientation)
-    //{
-    //  if (orientation == DeviceOrientations.Portrait)
-    //    Content = _portrait;
-    //  else
-    //    Content = _landscape;
-    //}
+    private View GetLandscapeView()
+    {
+      if (Device.Idiom == TargetIdiom.Tablet)
+      {
+        if (_tabletLandscape == null)
+          _tabletLandscape = new TabletLandscapeContent(_movieQuote);
+        return _tabletLandscape;
+      }
+      else
+      {
+        if (_landscape == null)
+          _landscape = new LandscapeContent(_movieQuote);
+        return _landscape;
+      }
+    }
+
   }
 }

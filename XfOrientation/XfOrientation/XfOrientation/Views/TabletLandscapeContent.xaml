@@ -1,31 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
-<ContentView x:Class="XfOrientation.LandscapeContent"
+<ContentView x:Class="XfOrientation.TabletLandscapeContent"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0"
-               Grid.Column="0"
-               Aspect="AspectFill"
-               Source="{Binding MovieQuote.Poster,
-                                Converter={StaticResource imageResourceCvt}}" />
-
+        <WebView Grid.Column="1"
+                 BackgroundColor="Gray"
+                 HorizontalOptions="FillAndExpand"
+                 Source="{Binding MovieQuote.ImdbLink}"
+                 VerticalOptions="FillAndExpand" />
 
         <Grid x:Name="RightContent"
               Grid.Row="0"
-              Grid.Column="1"
-              BackgroundColor="White"
+              Grid.Column="0"
+              BackgroundColor="#99FFFFFF"
               MinimumWidthRequest="300"
               Padding="20">
 
             <Grid>
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="AUTO" />
                     <RowDefinition Height="AUTO" />
@@ -66,7 +63,14 @@
                        Text="{Binding MovieQuote.Synopsis}"
                        TextColor="#666666" />
 
+                <Image Grid.Row="5"
+                       Aspect="AspectFit"
+                       Source="{Binding MovieQuote.Poster,
+                                        Converter={StaticResource imageResourceCvt}}" />
+
+
             </Grid>
         </Grid>
+
     </Grid>
 </ContentView>

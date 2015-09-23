@@ -18,6 +18,7 @@ namespace XfOrientation
     public string Genre { get; set; }
     public string Poster { get; set; }
     public string Synopsis { get; set; }
+    public string ImdbLink { get; set; }
     public string DisplayTitle
     {
       get { return Movie + " (" + ReleaseYear + ")"; }
@@ -27,15 +28,11 @@ namespace XfOrientation
     { 
       get { return "Rating: " + ImdbRating + "/10"; }
     }
-
-
   }
 
   public static class MovieQuoteGenerater
   {
     public static List<MovieQuote>  MovieQuotes { get; set; }
-
-
 
     static MovieQuoteGenerater()
     {
@@ -51,6 +48,7 @@ namespace XfOrientation
         ImdbRating = "8.2",
         Synopsis = "'The Dude' Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
         Poster= "BigLebowski_poster.jpg",
+        ImdbLink = "http://m.imdb.com/title/tt0118715/quotes/",
         Actor = "Jeff Bridges"
       });
 
@@ -64,6 +62,7 @@ namespace XfOrientation
         ImdbRating = "8.5",
         Synopsis = "An insane general triggers a path to nuclear holocaust that a war room full of politicians and generals frantically try to stop.",
         Poster= "DrStrangelove_poster.jpg",
+        ImdbLink = "http://m.imdb.com/title/tt0057012/quotes",
         Actor = ""
       });
 
@@ -78,6 +77,7 @@ namespace XfOrientation
         ImdbRating = "8.0",
         Synopsis = "Spinal Tap, one of England's loudest bands, is chronicled by film director Marty DeBergi on what proves to be a fateful tour.",
         Poster = "SpinalTap_poster.jpg",
+        ImdbLink = "http://m.imdb.com/title/tt0088258/quotes",
         Actor = ""
       });
 
@@ -91,19 +91,10 @@ namespace XfOrientation
         ImdbRating = "7.1",
         Synopsis = "Planet Spaceball's President Skroob sends Lord Dark Helmet to steal Planet Druidia's abundant supply of air to replenish their own, and only Lone Starr can stop them.",
         Poster= "Spaceballs_poster.jpg",
+        ImdbLink = "http://m.imdb.com/title/tt0094012/quotes",
         Actor = "John Candy"
       });
 
     }
-
-    private static Random _random = new Random();
-
-    public static MovieQuote GetRandomQuote()
-    {
-      int rndValue = _random.Next(0, MovieQuotes.Count);
-      return MovieQuotes[rndValue];
-    }
-  
   }
-
 }

@@ -1,6 +1,4 @@
-﻿using DeviceOrientation.Forms.Plugin.Abstractions;
-using Xamarin.Forms;
-using XfOrientation.Views;
+﻿using XfOrientation.Views;
 
 namespace XfOrientation
 {
@@ -17,7 +15,7 @@ namespace XfOrientation
 
     protected override void OnOrientationChanged(OrientationValue newOrientation)
     {
-      RightContent.IsVisible = newOrientation != OrientationValue.Portrait;
+      ExtendedContent.IsVisible = newOrientation != OrientationValue.Portrait;
     }
   }
 }

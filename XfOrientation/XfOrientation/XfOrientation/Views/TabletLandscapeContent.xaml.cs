@@ -1,15 +1,16 @@
-﻿using XfOrientation.Views;
+﻿using Xamarin.Forms;
 
 namespace XfOrientation
 {
-  public partial class FlowLayoutPage : BaseContentPage
+  public partial class TabletLandscapeContent : ContentView
   {
-    public FlowLayoutPage(MovieQuote movieQuote)
+    public TabletLandscapeContent(MovieQuote movieQuote)
     {
       InitializeComponent();
       MovieQuote = movieQuote;
       BindingContext = this;
     }
+
     public MovieQuote MovieQuote { get; set; }
   }
 }
