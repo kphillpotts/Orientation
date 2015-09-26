@@ -45,6 +45,7 @@
     <Compile Include="Views\FlowLayoutPage.xaml.cs">
       <DependentUpon>FlowLayoutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FontSizeHelper.cs" />
     <Compile Include="Views\TabletLandscapeContent.xaml.cs">
       <DependentUpon>TabletLandscapeContent.xaml</DependentUpon>
     </Compile>

@@ -69,7 +69,7 @@ namespace XfOrientation
 
       MovieQuotes.Add(new MovieQuote()
       {
-        Quote = "It's like, how much more black could this be? and the answer is none. None more black.",
+        Quote = "It's like, how much more black could this be? and the answer is none. None more black. It's like, how much more black could this be? and the answer is none. None more black.",
         Character = "Nigel Tufnel",
         Movie = "This Is Spinal Tap",
         ReleaseYear = "1984",

@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0"
+               x:Name="QuoteLabel"
                Style="{StaticResource quoteText}"
                Text="{Binding MovieQuote.Quote}" />
 
