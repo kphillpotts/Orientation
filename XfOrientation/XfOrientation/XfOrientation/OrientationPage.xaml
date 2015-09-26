@@ -6,13 +6,47 @@
                        Title="Movie Quotes">
 
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label HorizontalOptions="Center" VerticalOptions="Center" />
-        <Button Clicked="FlowLayout_OnClicked" Text="Simple Flow Layout" />
-        <Button Clicked="Extended_OnClicked" Text="Extended Page Layout" />
-        <Button Clicked="ComplimenatryLayout_OnClicked" Text="Complimentary Page Layout" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Grid Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
+            <Label Text="Layout Type" VerticalOptions="Center" />
+            <Picker x:Name="layoutPicker"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    SelectedIndex="{Binding LayoutType}">
+                <Picker.Items>
+                    <x:String>Flow</x:String>
+                    <x:String>Extended</x:String>
+                    <x:String>Complimentary</x:String>
+                </Picker.Items>
+            </Picker>
+
+        </Grid>
+
+        <ListView x:Name="list"
+                  Grid.Row="1"
+                  ItemSelected="List_OnItemSelected"
+                  ItemTapped="List_OnItemTapped"
+                  ItemsSource="{Binding MovieQuotes}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Detail="{Binding Quote}"
+                               ImageSource="{Binding Poster,
+                                                     Converter={StaticResource imageResourceCvt}}"
+                               Text="{Binding Movie}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
 
 </views:BaseContentPage>
