@@ -4,14 +4,15 @@ namespace XfOrientation.Views
 {
   public class BaseContentPage : ContentPage
   {
+    private double _width, _height;
+
     protected enum OrientationValue
     {
       Portrait,
       Landscape
     }
 
-    private double _width, _height;
-
+    protected virtual void OnOrientationChanged(OrientationValue newOrientation) { }
 
     protected override void OnSizeAllocated(double width, double height)
     {
@@ -25,9 +26,5 @@ namespace XfOrientation.Views
         OnOrientationChanged(width > height ? OrientationValue.Landscape : OrientationValue.Portrait);
       }
     }
-
-    protected virtual void OnOrientationChanged(OrientationValue newOrientation) { }
-
-
   }
 }

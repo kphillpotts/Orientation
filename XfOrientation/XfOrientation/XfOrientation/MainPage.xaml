@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:BaseContentPage x:Class="XfOrientation.OrientationPage"
+<views:BaseContentPage x:Class="XfOrientation.MainPage"
                        xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:views="clr-namespace:XfOrientation.Views;assembly=XfOrientation"
                        Title="Movie Quotes">
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -24,18 +22,17 @@
                     HorizontalOptions="FillAndExpand"
                     SelectedIndex="{Binding LayoutType}">
                 <Picker.Items>
-                    <x:String>Flow</x:String>
+                    <x:String>Fluid</x:String>
                     <x:String>Extended</x:String>
                     <x:String>Complimentary</x:String>
                 </Picker.Items>
             </Picker>
-
         </Grid>
 
         <ListView x:Name="list"
                   Grid.Row="1"
-                  ItemSelected="List_OnItemSelected"
                   ItemTapped="List_OnItemTapped"
+                  HorizontalOptions="FillAndExpand"
                   ItemsSource="{Binding MovieQuotes}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -46,7 +43,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
     </Grid>
-
 </views:BaseContentPage>

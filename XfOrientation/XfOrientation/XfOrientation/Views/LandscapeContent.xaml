@@ -16,7 +16,6 @@
                Source="{Binding MovieQuote.Poster,
                                 Converter={StaticResource imageResourceCvt}}" />
 
-
         <Grid x:Name="RightContent"
               Grid.Row="0"
               Grid.Column="1"

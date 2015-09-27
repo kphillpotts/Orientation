@@ -17,7 +17,10 @@ namespace XfOrientation.Views
 
     protected override void OnOrientationChanged(OrientationValue newOrientation)
     {
-      Content = newOrientation == OrientationValue.Portrait ? GetPortraitView() : GetLandscapeView();
+        if (newOrientation == OrientationValue.Portrait)
+            Content = GetPortraitView();
+        else
+            Content = GetLandscapeView();
     }
 
     private View GetPortraitView()

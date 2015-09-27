@@ -14,7 +14,6 @@ namespace XfOrientation
     public string Movie { get; set; }
     public string ReleaseYear { get; set; }
     public string ImdbRating { get; set; }
-    public string Actor { get; set; }
     public string Genre { get; set; }
     public string Poster { get; set; }
     public string Synopsis { get; set; }
@@ -49,7 +48,6 @@ namespace XfOrientation
         Synopsis = "'The Dude' Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
         Poster= "BigLebowski_poster.jpg",
         ImdbLink = "http://m.imdb.com/title/tt0118715/quotes/",
-        Actor = "Jeff Bridges"
       });
 
       MovieQuotes.Add(new MovieQuote()
@@ -63,13 +61,12 @@ namespace XfOrientation
         Synopsis = "An insane general triggers a path to nuclear holocaust that a war room full of politicians and generals frantically try to stop.",
         Poster= "DrStrangelove_poster.jpg",
         ImdbLink = "http://m.imdb.com/title/tt0057012/quotes",
-        Actor = ""
       });
 
 
       MovieQuotes.Add(new MovieQuote()
       {
-        Quote = "It's like, how much more black could this be? and the answer is none. None more black. It's like, how much more black could this be? and the answer is none. None more black.",
+        Quote = @"""It's like, how much more black could this be? and the answer is none. None more black.""",
         Character = "Nigel Tufnel",
         Movie = "This Is Spinal Tap",
         ReleaseYear = "1984",
@@ -78,12 +75,11 @@ namespace XfOrientation
         Synopsis = "Spinal Tap, one of England's loudest bands, is chronicled by film director Marty DeBergi on what proves to be a fateful tour.",
         Poster = "SpinalTap_poster.jpg",
         ImdbLink = "http://m.imdb.com/title/tt0088258/quotes",
-        Actor = ""
       });
 
       MovieQuotes.Add(new MovieQuote()
       {
-        Quote = "I'm a mog - half man, half dog. I'm my own best friend.",
+        Quote = @"""I'm a mog - half man, half dog. I'm my own best friend.""",
         Character = "Barf",
         Movie = "Spaceballs",
         ReleaseYear = "1987",
@@ -92,7 +88,6 @@ namespace XfOrientation
         Synopsis = "Planet Spaceball's President Skroob sends Lord Dark Helmet to steal Planet Druidia's abundant supply of air to replenish their own, and only Lone Starr can stop them.",
         Poster= "Spaceballs_poster.jpg",
         ImdbLink = "http://m.imdb.com/title/tt0094012/quotes",
-        Actor = "John Candy"
       });
 
     }

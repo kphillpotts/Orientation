@@ -10,7 +10,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0"
+        <Label x:Name="quoteLabel" Grid.Row="0"
                Style="{StaticResource quoteText}"
                Text="{Binding MovieQuote.Quote}" />
 

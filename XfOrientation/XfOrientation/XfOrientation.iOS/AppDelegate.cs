@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DeviceOrientation.Forms.Plugin.iOS;
 using Foundation;
 using UIKit;
 
@@ -23,7 +22,6 @@ namespace XfOrientation.iOS
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
       global::Xamarin.Forms.Forms.Init();
-      DeviceOrientationImplementation.Init();
       LoadApplication(new App());
 
       return base.FinishedLaunching(app, options);

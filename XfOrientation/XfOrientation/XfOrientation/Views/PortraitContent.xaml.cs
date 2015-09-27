@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using XfOrientation.Views;
 
 namespace XfOrientation
 {
@@ -7,10 +8,14 @@ namespace XfOrientation
     public PortraitContent(MovieQuote movieQuote)
     {
       InitializeComponent();
+
       this.MovieQuote = movieQuote;
       BindingContext = this;
     }
 
+
     public MovieQuote MovieQuote { get; set; }
+
+
   }
 }
