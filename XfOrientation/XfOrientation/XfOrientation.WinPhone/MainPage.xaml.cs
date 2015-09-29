@@ -17,9 +17,10 @@ namespace XfOrientation.WinPhone
     {
       InitializeComponent();
 
+      // lock the orientation if running on a phone
       //if (Device.Idiom == TargetIdiom.Phone)
       //  SupportedOrientations = SupportedPageOrientation.Portrait;
-
+      
       global::Xamarin.Forms.Forms.Init();
 
       LoadApplication(new XfOrientation.App());
